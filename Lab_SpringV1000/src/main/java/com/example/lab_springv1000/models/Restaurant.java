@@ -18,6 +18,7 @@ import java.util.List;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "restaurant_id")
     private int id;
 
     private String name;
@@ -40,4 +41,9 @@ public class Restaurant {
             inverseJoinColumns = @JoinColumn(name = "specialite_id")
     )
     private List<Specialite> specialites;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "zone_id")
+    private Zone zone;
+
 }

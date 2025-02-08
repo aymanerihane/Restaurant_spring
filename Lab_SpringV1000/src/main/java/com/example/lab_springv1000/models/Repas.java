@@ -16,6 +16,7 @@ public class Repas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "repas_id")
     private int id;
 
     private String name;

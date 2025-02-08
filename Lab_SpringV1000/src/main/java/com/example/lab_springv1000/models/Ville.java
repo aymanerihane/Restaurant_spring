@@ -16,6 +16,7 @@ import java.util.List;
 public class Ville {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ville_id")
     private int id;
 
     private String name;

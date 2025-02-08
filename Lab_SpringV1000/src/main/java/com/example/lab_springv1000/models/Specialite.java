@@ -16,13 +16,9 @@ public class Specialite {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "specialite_id")
     private int id;
 
     private String name;
 
-    @ManyToMany
-    @JoinTable(name = "specialite_restaurant",
-            joinColumns = @JoinColumn(name = "specialite_id"),
-            inverseJoinColumns = @JoinColumn(name="restaurant_id"))
-    private List<Restaurant> restaurants;
 }

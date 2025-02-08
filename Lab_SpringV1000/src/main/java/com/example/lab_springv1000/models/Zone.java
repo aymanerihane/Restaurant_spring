@@ -16,12 +16,13 @@ import java.util.List;
 public class Zone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "zone_id")
     private int id;
 
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "ville_id")
+    @JoinColumn(name = "ville_id", referencedColumnName = "ville_id")
     private Ville ville;
 
     @OneToMany(mappedBy = "zone", cascade = CascadeType.ALL)
